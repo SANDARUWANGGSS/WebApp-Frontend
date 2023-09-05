@@ -1,0 +1,1 @@
+All resoueces should go here. ex : png, jpg and etc.

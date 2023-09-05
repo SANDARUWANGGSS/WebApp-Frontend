@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Box, CssBaseline, LinearProgress } from "@mui/material";
+import "./App.css";
+import { Routes } from "./Routes";
+import { Suspense, useEffect, useMemo } from "react";
+import { SkeletonLoaderWithHeader } from "./components/common/SkeletonLoader";
+import { ToastProvider } from "./app/providers/toastProvider";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <div>
+          <ToastProvider>
+              <CssBaseline />
+              <Box sx={{ bgcolor: "background.default", minHeight: "100vh" }}>
+                <Suspense fallback={<SkeletonLoaderWithHeader />}>
+                  <Box sx={{ display: "flex" }}>
+                    <Routes />
+                  </Box>
+                </Suspense>
+              </Box>
+          </ToastProvider>
+        </div>
+      </Router>
     </div>
   );
 }
-
-export default App;
