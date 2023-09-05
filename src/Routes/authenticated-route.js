@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Redirect, Route, useHistory } from "react-router-dom";
-import { routeConstants } from "../../resources/constants/routeConstants";
+import { routeConstants } from "../../";
 import { customLogger } from "../../util/customLogger";
 import { useEntryChecker } from "../../util/hooks/useEntryChecker";
 

@@ -1,6 +1,7 @@
 import React, { lazy } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import RedirectedRoute from "./Routes/redirected-route";
+// import { SignIn } from "./components/SignIn";
 import { PageNotFound } from "./components/common/PageNotFound";
 import { context } from "./resources/constants/StringConstants";
 
@@ -13,10 +14,13 @@ export const Routes = () => (
       <Redirect to={context + "initialize"} />
     </Route>
     <RedirectedRoute path={context + "initialize"} component={Initialize} />
-    <RedirectedRoute path={context + "sign-in"} component={SignIn} />
+    {/* <RedirectedRoute path={context + "sign-in"} component={SignIn} /> */}
 
     <Route exact path={context}>
       <Redirect to={context + "initialize"} />
+    </Route>
+    <Route path={context + "sign-in"}>
+      <SignIn />
     </Route>
     <Route path="*">
       <PageNotFound />
