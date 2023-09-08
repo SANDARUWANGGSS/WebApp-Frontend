@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Redirect, Route, useHistory } from "react-router-dom";
-import { routeConstants } from "../../";
+import { ROUTE_PATHS } from "../resources/constants/RoutePaths";
 import { customLogger } from "../../util/customLogger";
 import { useEntryChecker } from "../../util/hooks/useEntryChecker";
 
@@ -44,7 +44,7 @@ function AuthRoute({ component: Component }) {
           ) : (
             <Redirect
               to={{
-                pathname: routeConstants.INITIALIZE,
+                pathname: ROUTE_PATHS.INITIALIZE,
                 redirectPath: window.location.pathname,
               }}
             />

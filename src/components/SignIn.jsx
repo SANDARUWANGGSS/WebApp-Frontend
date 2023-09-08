@@ -10,7 +10,11 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { Container } from "@mui/material";
 
-export default function SignInSide() {
+import Background from "../assets/images/LoginBanner.jpg";
+import PageTitleBlock from "./common/PageTitleBlock";
+import FormLogo from "./common/FormLogo";
+
+export default function SignIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -21,7 +25,73 @@ export default function SignInSide() {
   };
 
   return (
-    <Container component="main" maxWidth="lg">
+    <>
+      <Grid container component="main" sx={{ height: "100vh" }}>
+        <Grid
+          item
+          xs={false}
+          sm={4}
+          md={7}
+          sx={{
+            backgroundImage: "url(" + Background + ")",
+            backgroundRepeat: "no-repeat",
+            // backgroundColor: (t) => (t.palette.mode === "light" ? t.palette.grey[50] : t.palette.grey[900]),
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+
+        <Grid
+          item
+          xs={12}
+          sm={8}
+          md={5}
+          component={Paper}
+          elevation={6}
+          square
+          // sx={{
+          //   backgroundColor: (t) =>
+          //     t.palette.mode === "light"
+          //       ? t.palette.grey[50]
+          //       : t.palette.grey[900],
+          // }}
+        >
+          {/* <Box sx={!formLoading ? { mb: "4px" } : { mb: "0px" }}>{formLoading && <LinearProgress />}</Box> */}
+          <Grid
+            container
+            direction="column"
+            justifyContent="flex-end"
+            alignItems="end"
+            sx={{ px: 3, py: 1 }}
+          >
+            {/* <Grid item> {window.location.pathname !== ROUTE_PATHS.MY_ACCOUNT ? <LanguageChanger /> : <></>}</Grid> */}
+          </Grid>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              margin: "auto",
+              justifyContent: "center",
+              height: "85vh",
+              px: { xs: 1.5, lg: 8, xl: 20 },
+              py: { xs: 3, lg: 4, xl: 5 },
+            }}
+          >
+            <Box sx={{ width: "100%", p: 1 }}>
+              <Box sx={{ width: "100%" }}>
+                <Box sx={{ pt: 2 }}>
+                  <FormLogo />
+                </Box>
+                <Box sx={{ width: "100%" }}>
+                  <PageTitleBlock title={"Welcome to System"} textAlign="center" />
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+      {/* <Container component="main" maxWidth="lg">
       <Box
         sx={{
           marginTop: 8,
@@ -121,6 +191,8 @@ export default function SignInSide() {
           </Grid>
         </Grid>
       </Box>
-    </Container>
+    </Container> */}
+    </>
   );
-}
+};
+

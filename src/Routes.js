@@ -1,7 +1,6 @@
 import React, { lazy } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import RedirectedRoute from "./Routes/redirected-route";
-// import { SignIn } from "./components/SignIn";
 import { PageNotFound } from "./components/common/PageNotFound";
 import { context } from "./resources/constants/StringConstants";
 

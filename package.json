@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "11.10.6",
-    "@emotion/styled": "11.10.6",
-    "@mui/material": "5.11.11",
     "@mui/styles": "5.11.2",
     "@mui/x-date-pickers": "5.0.8",
     "@testing-library/jest-dom": "5.15.1",
@@ -24,7 +21,12 @@
     "react-scripts": "5.0.0",
     "styled-components": "^6.0.7",
     "web-vitals": "1.1.2",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "@mui/icons-material": "^5.14.3",
+    "@mui/lab": "^5.0.0-alpha.63",
+    "@mui/material": "^5.11.11",
+    "@mui/x-data-grid": "^5.17.24",
+    "@mui/x-data-grid-generator": "^5.17.24"
   },
   "scripts": {
     "start": "react-scripts start",

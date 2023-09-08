@@ -1,0 +1,1 @@
+Images should be included for this folder
