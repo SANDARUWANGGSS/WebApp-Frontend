@@ -84,7 +84,7 @@ export default function SignIn() {
                   <FormLogo />
                 </Box>
                 <Box sx={{ width: "100%" }}>
-                  <PageTitleBlock title={"Welcome to System"} textAlign="center" />
+                  <PageTitleBlock title={"Welcome to SRM"} textAlign="center" />
                 </Box>
               </Box>
             </Box>
