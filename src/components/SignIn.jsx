@@ -15,6 +15,7 @@ import PageTitleBlock from "./common/PageTitleBlock";
 import FormLogo from "./common/FormLogo";
 
 export default function SignIn() {
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -49,12 +50,12 @@ export default function SignIn() {
           component={Paper}
           elevation={6}
           square
-          // sx={{
-          //   backgroundColor: (t) =>
-          //     t.palette.mode === "light"
-          //       ? t.palette.grey[50]
-          //       : t.palette.grey[900],
-          // }}
+          sx={{
+            backgroundColor: (t) =>
+              t.palette.mode === "light"
+                ? t.palette.grey[50]
+                : t.palette.grey[900],
+          }}
         >
           {/* <Box sx={!formLoading ? { mb: "4px" } : { mb: "0px" }}>{formLoading && <LinearProgress />}</Box> */}
           <Grid
