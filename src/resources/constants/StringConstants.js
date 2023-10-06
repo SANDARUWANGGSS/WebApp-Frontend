@@ -1,4 +1,4 @@
-export const APP_FONT_NAME = `'Montserrat', Helvetica`;
+export const APP_FONT_NAME = "Montserrat";
 
 export const TOAST = { SUCCESS: "SUCCESS", INFO: "INFO", WARN: "WARN", ERROR: "ERROR" };
 
