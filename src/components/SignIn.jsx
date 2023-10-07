@@ -9,7 +9,8 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { Container } from "@mui/material";
-
+import { Fragment, useEffect, useState } from "react";
+import { sizing } from '@mui/system';
 import Background from "../assets/images/LoginBanner.jpg";
 import PageTitleBlock from "./common/PageTitleBlock";
 import FormLogo from "./common/FormLogo";
@@ -24,6 +25,8 @@ export default function SignIn() {
       password: data.get("password"),
     });
   };
+
+
 
   return (
     <>
@@ -88,6 +91,238 @@ export default function SignIn() {
                   <PageTitleBlock title={"Welcome to SRM"} textAlign="center" />
                 </Box>
               </Box>
+              <Box sx={{ width: "100%", p: 2 }}>
+                    <form >
+                    <Fragment  >
+                          <Box className="field"
+                            sx={{  height: '100%',margin: 2 }} 
+                           >
+                            {/* <label htmlFor="email" className="block mb-1 text-sm ">
+                              Email
+                            </label> */}
+                            <TextField
+                              label="Email"
+                              id="outlined-required"
+                              type="text"
+                              style={{ width: "100%" }}
+                            />
+                            {/* <TextField
+                              type="text"
+                              name="email"
+                              autoComplete="username"
+                              value={formik.values.email}
+                              onChange={formik.handleChange}
+                              onBlur={formik.handleBlur}
+                              className={classNames({ "p-invalid": isFormFieldValid("email") }, "w-full mb-1")}
+                            /> */}
+                            {/* {getFormErrorMessage("email")} */}
+                          </Box>
+                          <Box className="field"
+                          sx={{ margin: 2 }}>
+                            {/* <label htmlFor="password" className="block mb-1 text-sm ">
+                              Password
+                            </label> */}
+                            {/* <TextField
+                              feedback={false}
+                              type="password"
+                              name="password"
+                              autoComplete="current-password"
+                              toggleMask
+                              style={{ width: "100%" }}
+                              value={formik.values.password}
+                              onChange={formik.handleChange}
+                              onBlur={formik.handleBlur}
+                              className={classNames({ "p-invalid": isFormFieldValid("password") }, "w-full mb-1")}
+                            /> */}
+                            {/* {getFormErrorMessage("password")} */}
+                            <TextField
+                              id="outlined-password-input"
+                              label="Password"
+                              type="password"
+                              autoComplete="current-password"
+                              style={{ width: "100%" }}
+                              mt-2
+                            />
+                          </Box>
+                          <Box className="flex align-items-center justify-content-between mb-1">
+                            <Box className="flex align-items-center">
+                              {/* <Link style={{ textDecoration: "none" }} to={ROUTE_PATHS.AUTH_PASSWORD_RESET}>
+                                <Button
+                                  disabled={loading}
+                                  label={t("GeneralText.SignInPage.ForgotPassword")}
+                                  className="p-button-link p-button-sm text-xs p-0"
+                                  type="button"></Button>
+                              </Link> */}
+                            </Box>
+                          </Box>
+
+                          <Box className="text-center mb-3">
+                            {/* <small className="p-error block">{errorMessage}</small> */}
+                          </Box>
+                        </Fragment>
+                        <Box sx={{ pt: 2 }} className="flex justify-content-center flex-wrap">
+                        <Box className=" flex align-items-center justify-content-center">
+                        <Button icon="pi pi-sign-in"
+                        variant="contained">Sign In</Button>
+                          {/* {!alreadySignedIn && ( */}
+                            <Button
+                              // disabled={formLoading}
+                              label={"Sign In"}
+                              className="p-button-rounded px-5 py-3"
+                              icon="pi pi-sign-in"
+                              // loading={loading}
+                              type="submit"
+                            />
+                          {/* )}
+                          {alreadySignedIn && ( */}
+                            <Button
+                              // disabled={!alreadySignedInUser}
+                              // onClick={continueClick}
+                              label={"Continue"}
+                              className="p-button-rounded px-5 py-3"
+                              icon="pi pi-sign-in"
+                              // loading={loading}
+                              type="button"
+                            />
+                          {/* )} */}
+                        </Box>
+                      </Box>
+                      {/* {alreadySignedIn && (
+                        <Fragment>
+                          <Box className="my-5">
+                            <Box className="text-center">
+                              <span className="text-600 font-medium line-height-3">
+                                {t("GeneralText.SignInPage.AlreadySignedInFrom")}
+                              </span>
+                              <br />
+                              <Box className="font-medium no-underline text-blue-500 w-full">
+                                {alreadySignedInUser.attributes.email}
+                              </Box>
+                            </Box>
+                          </Box>
+                        </Fragment>
+                      )}
+                      {!alreadySignedIn && (
+                        <Fragment>
+                          <Box className="field">
+                            <label htmlFor="email" className="block mb-1 text-sm ">
+                              {t("GeneralText.SignInPage.Email")}
+                            </label>
+                            <InputText
+                              type="text"
+                              name="email"
+                              autoComplete="username"
+                              value={formik.values.email}
+                              onChange={formik.handleChange}
+                              onBlur={formik.handleBlur}
+                              className={classNames({ "p-invalid": isFormFieldValid("email") }, "w-full mb-1")}
+                            />
+                            {getFormErrorMessage("email")}
+                          </Box>
+                          <Box className="field">
+                            <label htmlFor="password" className="block mb-1 text-sm ">
+                              {t("GeneralText.SignInPage.Password")}
+                            </label>
+                            <Password
+                              feedback={false}
+                              type="password"
+                              name="password"
+                              autoComplete="current-password"
+                              toggleMask
+                              style={{ width: "100%" }}
+                              value={formik.values.password}
+                              onChange={formik.handleChange}
+                              onBlur={formik.handleBlur}
+                              className={classNames({ "p-invalid": isFormFieldValid("password") }, "w-full mb-1")}
+                            />
+                            {getFormErrorMessage("password")}
+                          </Box>
+                          <Box className="flex align-items-center justify-content-between mb-1">
+                            <Box className="flex align-items-center">
+                              <Link style={{ textDecoration: "none" }} to={ROUTE_PATHS.AUTH_PASSWORD_RESET}>
+                                <Button
+                                  disabled={loading}
+                                  label={t("GeneralText.SignInPage.ForgotPassword")}
+                                  className="p-button-link p-button-sm text-xs p-0"
+                                  type="button"></Button>
+                              </Link>
+                            </Box>
+                          </Box>
+
+                          <Box className="text-center mb-3">
+                            <small className="p-error block">{errorMessage}</small>
+                          </Box>
+                        </Fragment>
+                      )} */}
+
+                      {/*  ================================================================ Button Section */}
+
+                      {/* <Box sx={{ pt: 2 }} className="flex justify-content-center flex-wrap">
+                        <Box className=" flex align-items-center justify-content-center">
+                          {!alreadySignedIn && (
+                            <Button
+                              disabled={formLoading}
+                              label={t("GeneralText.CommonText.SignIn")}
+                              className="p-button-rounded px-5 py-3"
+                              icon="pi pi-sign-in"
+                              loading={loading}
+                              type="submit"
+                            />
+                          )}
+                          {alreadySignedIn && (
+                            <Button
+                              disabled={!alreadySignedInUser}
+                              onClick={continueClick}
+                              label={t("GeneralText.SignInPage.Continue")}
+                              className="p-button-rounded px-5 py-3"
+                              icon="pi pi-sign-in"
+                              loading={loading}
+                              type="button"
+                            />
+                          )}
+                        </Box>
+                      </Box> */}
+                      {/*  ================================================================ Other Options */}
+                      {/* {!alreadySignedIn &&
+                      (configuration.APP_ENV === "localhost" || configuration.APP_ENV === "dev") ? (
+                        <Box className="mt-3">
+                          <Box className="text-center">
+                            <span className="text-600 font-medium line-height-3">
+                              {t("GeneralText.SignInPage.DoNotHaveAnAccount")}
+                            </span>
+                            <br />
+                            <Link style={{ textDecoration: "none" }} to={ROUTE_PATHS.AUTH_SIGN_UP}>
+                              <Button
+                                disabled={loading}
+                                label={t("GeneralText.CommonText.SignUp")}
+                                // onClick={goToSignUp}
+                                className="p-button-link p-button-sm p-0"
+                                type="button"></Button>
+                            </Link>
+                          </Box>
+                        </Box>
+                      ) : (
+                        <></>
+                      )}
+                      {alreadySignedIn && (
+                        <Box className="mt-5">
+                          <Box className="text-center">
+                            <span className="text-600 font-medium line-height-3">
+                              {t("GeneralText.SignInPage.UseADifferentAccount")}
+                            </span>
+                            <br />
+                            <Button
+                              disabled={loading}
+                              label={t("GeneralText.CommonText.SignOut")}
+                              loading={loadingSignOut}
+                              className="p-button-link p-button-sm p-0"
+                              onClick={signOutClick}
+                              type="button"></Button>
+                          </Box>
+                        </Box>
+                      )} */}
+                    </form>
+                  </Box>
             </Box>
           </Box>
         </Grid>
