@@ -10,6 +10,11 @@ import { APP_FONT_NAME } from "./resources/constants/StringConstants";
 export default function App() {
   const MUI_THEME = createTheme({
     typography: { fontFamily: APP_FONT_NAME },
+    palette: {
+      primary: {
+        main: '#097d09', // Green color
+      },
+    },
   });
   return (
     <div className="App">
