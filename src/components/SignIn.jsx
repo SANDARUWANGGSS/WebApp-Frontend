@@ -7,6 +7,7 @@ import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
+import LoginIcon from '@mui/icons-material/Login';
 import Typography from "@mui/material/Typography";
 import { Container } from "@mui/material";
 import { Fragment, useEffect, useState } from "react";
@@ -162,29 +163,9 @@ export default function SignIn() {
                         </Fragment>
                         <Box sx={{ pt: 2 }} className="flex justify-content-center flex-wrap">
                         <Box className=" flex align-items-center justify-content-center">
-                        <Button icon="pi pi-sign-in"
-                        variant="contained">Sign In</Button>
-                          {/* {!alreadySignedIn && ( */}
-                            <Button
-                              // disabled={formLoading}
-                              label={"Sign In"}
-                              className="p-button-rounded px-5 py-3"
-                              icon="pi pi-sign-in"
-                              // loading={loading}
-                              type="submit"
-                            />
-                          {/* )}
-                          {alreadySignedIn && ( */}
-                            <Button
-                              // disabled={!alreadySignedInUser}
-                              // onClick={continueClick}
-                              label={"Continue"}
-                              className="p-button-rounded px-5 py-3"
-                              icon="pi pi-sign-in"
-                              // loading={loading}
-                              type="button"
-                            />
-                          {/* )} */}
+                        <Button startIcon={<LoginIcon />}
+                        variant="contained" sx={{ textTransform: 'none' }}>Sign In</Button>
+                          
                         </Box>
                       </Box>
                       {/* {alreadySignedIn && (
