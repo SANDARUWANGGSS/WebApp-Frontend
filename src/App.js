@@ -15,6 +15,9 @@ export default function App() {
         main: '#097d09', // Green color
       },
     },
+    shape: {
+    borderRadius: 15,
+  }, 
   });
   return (
     <div className="App">
